@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DJ LUK - Audio Tracks</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">DJ LUK</h1>
+                <span class="subtitle">Audio Tracks</span>
+            </div>
+        </header>
+
+        <!-- Controls Panel -->
+        <div class="controls-panel">
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Поиск по названию или стилю...">
+                <button id="clearSearch" class="clear-btn" style="display: none;">&times;</button>
+            </div>
+            <div class="sort-container">
+                <select id="sortSelect" class="sort-select">
+                    <option value="date-desc">Сначала новые</option>
+                    <option value="date-asc">Сначала старые</option>
+                    <option value="title-asc">Название (А-Я)</option>
+                    <option value="title-desc">Название (Я-А)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Track List -->
+        <div id="trackList" class="track-list">
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Загрузка треков...</p>
+            </div>
+        </div>
+
+        <!-- Fixed Player -->
+        <div id="player" class="player" style="display: none;">
+            <div class="player-info">
+                <span id="playerTitle" class="player-title">Выберите трек</span>
+                <span id="playerStyle" class="player-style"></span>
+            </div>
+            <div class="player-controls">
+                <button id="playPauseBtn" class="play-pause-btn">
+                    <svg id="playIcon" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M8 5v14l11-7z"/>
+                    </svg>
+                    <svg id="pauseIcon" viewBox="0 0 24 24" width="24" height="24" style="display: none;">
+                        <path fill="currentColor" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                    </svg>
+                </button>
+                <div class="progress-container">
+                    <span id="currentTime" class="time">0:00</span>
+                    <input type="range" id="progressBar" class="progress-bar" value="0" min="0" max="100">
+                    <span id="duration" class="time">0:00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Modal -->
+        <div id="descriptionModal" class="modal" style="display: none;">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalTitle" class="modal-title"></h2>
+                    <button id="closeModal" class="close-btn">&times;</button>
+                </div>
+                <div id="modalDescription" class="modal-description"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
