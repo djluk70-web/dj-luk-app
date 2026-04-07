@@ -40,27 +40,46 @@ body {
 .header {
     background-color: var(--tg-theme-header-bg-color);
     padding: 16px;
-    text-align: center;
     border-bottom: 1px solid var(--tg-theme-section-separator-color);
 }
 
 .header-content {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+}
+
+.header-text {
+    width: 65%;
+    text-align: left;
 }
 
 .logo {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
     color: var(--tg-theme-button-color);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
+    line-height: 1.2;
 }
 
 .subtitle {
     font-size: 14px;
     color: var(--tg-theme-subtitle-text-color);
     margin-top: 4px;
+    display: block;
+}
+
+.header-logo {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header-logo img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 /* Controls Panel */
